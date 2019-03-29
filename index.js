@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron'); // 在electron 中有 app 这个对象 和BrowserWindow 这个类
-
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600 }); //在这里是创建一个BrowserWindow的实例，就是一个窗口，设定大小
     win.loadFile('index.html'); //加载了主窗口UI的页面文件
@@ -8,7 +7,6 @@ function createWindow() {
         win = null
     })
 }
-
 app.on('ready', createWindow);
 app.on('window-all-closed',()=>{
     console.log('window-all-closed');
@@ -16,7 +14,6 @@ app.on('window-all-closed',()=>{
         app.quit();
     }
 });
-
 app.on('active',()=>{
     console.log('active');
     if (win == null) {
